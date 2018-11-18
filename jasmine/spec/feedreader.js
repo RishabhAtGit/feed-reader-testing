@@ -122,4 +122,27 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+      // test suite named: New Feed Selection
+      describe('New Feed Selection', function(){
+       const feed = document.querySelector('.feed');
+       const initialFeed = [];
+
+       beforeEach(function(done){
+         loadFeed(0);
+         Array.from(feed.children).forEach(function(feedEntry){
+           initialFeed.push(feedEntry.innerText);
+         });
+         loadFeed(1, function(){
+           done();
+         });
+       });
+          // test to ensure that when a new feed is loaded by loadFeed function that the content actually changes.
+       it('new feeds loaded by loadFeed that actually changes the content', function(){
+         Array.from(feed.children).forEach(function(feedEntry,index){
+           expect(initialFeed[index]).not.toBe(feedEntry.innerText);
+         });
+       });
+      });
+
 }());
