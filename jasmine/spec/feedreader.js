@@ -70,6 +70,26 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
+      // test suite for menu element : "The menu"
+
+      describe('The menu', function(){
+
+        // test to ensure that menu  element is hidden by default
+        it('menu is hidden by default', function(){
+          const bodyElement = document.querySelector('body');
+          expect(bodyElement.classList.contains('menu-hidden')).toBe(true);
+        });
+
+        // test to ensure that menu changes visibility when the menu icon is clicked
+        it('menu changes visibility when the menu icon is clicked', function(){
+          const bodyElement = document.querySelector('body');
+          const menuIcon = document.querySelector('.menu-icon-link');
+          menuIcon.click();
+          expect(bodyElement.classList.contains('menu-hidden')).toBe(false);
+        });
+      });
+
+
     /* TODO: Write a new test suite named "Initial Entries" */
 
         /* TODO: Write a test that ensures when the loadFeed
