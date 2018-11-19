@@ -71,8 +71,8 @@ $(function() {
 
     //test to ensure atleast one entry is present within the feed container
     it('completes its work', function() {
-      const feed = document.querySelector('.feed');
-      expect(feed.children.length > 0).toBe(true);
+      const feed = document.querySelector('.feed').querySelectorAll('.entry');
+      expect(feed.length > 0).toBe(true);
     });
 
   });
