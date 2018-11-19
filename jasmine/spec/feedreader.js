@@ -83,10 +83,12 @@ $(function() {
     const initialFeed = [];
 
     beforeEach(function(done) {
-      loadFeed(0);
-      Array.from(feed.children).forEach(function(feedEntry) {
-        initialFeed.push(feedEntry.innerText);
+      loadFeed(0, function(){
+        Array.from(feed.children).forEach(function(feedEntry){
+          initialFeed.push(feedEntry.innerText);
+        });
       });
+
       loadFeed(1, function() {
         done();
       });
