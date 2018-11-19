@@ -87,10 +87,9 @@ $(function() {
         Array.from(feed.children).forEach(function(feedEntry){
           initialFeed.push(feedEntry.innerText);
         });
-      });
-
-      loadFeed(1, function() {
-        done();
+        loadFeed(1, function(){
+          done();
+        });
       });
     });
     // test to ensure that when a new feed is loaded by loadFeed function that the content actually changes.
