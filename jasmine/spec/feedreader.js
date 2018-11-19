@@ -55,6 +55,8 @@ $(function() {
       const menuIcon = document.querySelector('.menu-icon-link');
       menuIcon.click();
       expect(bodyElement.classList.contains('menu-hidden')).toBe(false);
+      menuIcon.click();
+      expect(bodyElement.classList.contains('menu-hidden')).toBe(true);
     });
   });
 
